@@ -1,11 +1,14 @@
-import Banner from "../../components/Banner/Banner"
+import Banner from "../../components/Banner/Banner";
+import ExploreMenu from "../../components/ExploreMenu/ExploreMenu";
 
 function Home() {
-  return (
-    <div>
-      <Banner />
-    </div>
-  )
+    return (
+        <div>
+            <Banner />
+            <ExploreMenu />
+            <hr />
+        </div>
+    );
 }
 
-export default Home
+export default Home;
