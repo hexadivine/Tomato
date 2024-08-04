@@ -1,0 +1,17 @@
+.menu-category {
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.menu-category-img {
+    height: 13rem;
+    width: 13rem;
+}
+
+.active-menu-category {
+    border: 0.5rem solid tomato;
+    border-radius: 50%;
+    height: 12rem;
+    width: 12rem;
+}
