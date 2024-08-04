@@ -6,7 +6,7 @@ nav {
 }
 
 .nav-left {
-    font-size: 3.2rem;
+    font-size: 4rem;
     font-weight: 600;
     color: tomato;
 }
@@ -49,4 +49,14 @@ nav {
 
 .nav-right button:hover {
     background-color: #ff634749;
+}
+
+@media (max-width: 1080px) {
+
+    .nav-center {
+        display: none;
+    }
+    .nav-right {
+        gap: 2rem
+    }
 }

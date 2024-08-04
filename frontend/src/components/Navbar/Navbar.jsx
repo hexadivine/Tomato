@@ -7,7 +7,7 @@ function Navbar() {
 
     return (
         <nav>
-            <div className="nav-left">HeavenlyDelights</div>
+            <div className="nav-left">Tomato</div>
             <div className="nav-center">
                 <ul>
                     <li
