@@ -2,10 +2,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding-top: 2rem;
-    max-width: 150rem;
-    margin: 0 auto;
 }
 
 .nav-left {

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -9,4 +11,7 @@ html {
 
 body {
   font-size: 16px;
+  font-family: Outfit, Poppins;
+  max-width: 150rem;
+  margin: 0 auto;
 }
