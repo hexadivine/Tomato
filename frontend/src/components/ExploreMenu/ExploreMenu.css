@@ -10,16 +10,3 @@
     padding-top: 2rem;
     color: #363636;
 }
-
-.menu-categories {
-    display: flex;
-    gap: 5rem;
-    margin-top: 5rem;
-    overflow-y: scroll;
-    margin-bottom: 5rem;
-    scrollbar-width: none;
-}
-
-.menu-categories::-webkit-scrollbar {
-    display: none;
-}

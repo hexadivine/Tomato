@@ -1,0 +1,58 @@
+.menu-card {
+    width: fit-content;
+    margin-top: 5rem;
+    box-shadow: 1rem 1rem 2rem 0rem gray;
+    border-radius: 2rem;
+}
+
+.menu-card img:first-child {
+    width:  100%;
+    border-radius: 2rem;
+
+}
+
+.menu-card-info {
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+.menu-img {
+    position: relative;
+    z-index: 1;
+}
+
+.add-to-cart {
+    cursor: pointer;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 2;
+    height: 4rem;    
+}
+
+.add-remove {
+    display: flex;
+    background-color: white;
+    align-items: center;
+    border-radius: 5rem;
+    gap: 1rem;
+    /* height: 4rem; */
+}
+
+.menu-card-info-heading {
+    display: flex;
+}
+
+.menu-card img:nth-child(2) {
+    margin-left: auto;
+}
+
+.menu-description {
+    margin: 2rem 0;
+}
+
+.menu-price{
+    color: tomato;
+    font-size: 2.5rem;
+    font-weight: 600;
+}

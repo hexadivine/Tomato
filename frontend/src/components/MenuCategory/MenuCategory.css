@@ -1,3 +1,16 @@
+.menu-categories {
+    display: flex;
+    gap: 5rem;
+    margin-top: 5rem;
+    overflow-y: scroll;
+    margin-bottom: 5rem;
+    scrollbar-width: none;
+}
+
+.menu-categories::-webkit-scrollbar {
+    display: none;
+}
+
 .menu-category {
     text-align: center;
     cursor: pointer;
