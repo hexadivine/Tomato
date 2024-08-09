@@ -1,5 +1,5 @@
 .footer {
-    position: absolute;
+    position: fixed;
     left: 0;
     margin-top: 10rem ;
     padding: 5rem 2rem 0; 
@@ -31,6 +31,5 @@
 @media (max-width: 500px) {
     .footer {
         flex-direction: column;
-        /* gap: 4rem */
     }
 }
