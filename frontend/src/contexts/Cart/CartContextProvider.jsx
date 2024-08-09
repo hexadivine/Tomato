@@ -1,19 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CartContext } from "./CartContext";
 import { food_list, menu_list } from "../../assets/assets";
 
 function CartContextProvider(props) {
     const [cart, setCart] = useState({});
 
+    useEffect(() => {
+        Object.keys(cart).forEach((cartKey) => cart[cartKey] === 0 ? delete cart[cartKey] : '')
+    }, [cart])
+
     const addToCart = (id) => {
-        console.log(cart);
         console.log(id);
         if (!cart[id]) setCart((prev) => ({ ...prev, [id]: 1 }));
         else setCart((prev) => ({ ...prev, [id]: prev[id] + 1 }));
     };
 
     const removeFromCart = (id) => {
-        setCart((prev) => ({ ...prev, [id]: prev[id] - 1 }));
+        if (cart[id] === 1){
+            delete cart[id];
+            setCart({...cart});
+        }
+        else
+            setCart((prev) => ({ ...prev, [id]: prev[id] - 1 }));
+
     };
 
     const getTotal = () => {
