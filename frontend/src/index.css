@@ -17,6 +17,10 @@ body {
   padding: 0 5rem
 }
 
+Link, a {
+  all: unset;
+}
+
 @media (max-width: 1080px) {
 
   html {
