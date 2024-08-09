@@ -5,12 +5,12 @@ nav {
     padding-top: 2rem;
 }
 
-.nav-left {
+.logo {
     font-size: 4rem;
     font-weight: 600;
     color: tomato;
 }
-.nav-left::after {
+.logo::after {
     content: '.';
     font-size: 4rem;
     line-height: 3.2rem;

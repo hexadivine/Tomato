@@ -7,7 +7,7 @@ function Navbar() {
 
     return (
         <nav>
-            <div className="nav-left">Tomato</div>
+            <div className="logo nav-left">Tomato</div>
             <div className="nav-center">
                 <ul>
                     <li
