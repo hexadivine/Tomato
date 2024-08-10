@@ -1,0 +1,25 @@
+.promo-code {
+    align-items: center;
+}
+
+.promo-code p {
+    margin-bottom: 1rem;
+}
+
+.promo-code input {
+    all: unset;
+    background-color: #ececec;
+    line-height: 2rem;
+    padding: 1rem 2rem ;
+    border-radius: 0.5rem;
+}
+
+.promo-code button {
+    all: unset;
+    margin-top: 1rem;
+    background-color: black;
+    color: white;
+    line-height: 2rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+}
