@@ -1,0 +1,19 @@
+.error-msg {
+    text-align: center;
+    margin: 20vh 0;
+}
+
+.bottom-div {
+    display: flex;
+    margin-top: 8rem;
+    justify-content: center;
+    gap:10rem;
+}
+
+@media (max-width: 700px) {
+    .bottom-div {
+        flex-direction: column-reverse;
+        gap: 5rem;
+        align-items: center;
+    }
+}

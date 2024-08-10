@@ -1,11 +1,27 @@
-import CartOrders from "../../components/CartOrders/CartOrders"
+import "./Cart.css";
+import CartOrders from "../../components/CartOrders/CartOrders";
+import CartTotal from "../../components/CartTotal/CartTotal";
+import PromoCode from "../../components/PromoCode/PromoCode";
+import { useCart } from "../../contexts/Cart/CartContext";
 
 function Cart() {
-  return (
-    <>
-        <CartOrders />
-    </>
-  )
+    const { cart } = useCart();
+
+    return (
+        <>
+            {Object.keys(cart).length === 0 ? (
+                <h1 className="error-msg"> You need to add food items to the cart before visiting this page </h1>
+            ) : (
+                <>
+                    <CartOrders />
+                    <div className="bottom-div">
+                        <CartTotal />
+                        <PromoCode />
+                    </div>
+                </>
+            )}
+        </>
+    );
 }
 
-export default Cart
+export default Cart;
