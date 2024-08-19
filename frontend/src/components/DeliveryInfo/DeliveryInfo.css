@@ -1,0 +1,15 @@
+.delivery-info {
+    width: max(50%, 50rem);
+}
+.delivery-info input {
+    width: calc(100% - 4rem);
+    margin-top: 2rem;
+    line-height: 2rem;
+    padding: 1rem 2rem;
+    outline-color: tomato;
+}
+
+.split-form {
+    display: flex;
+    gap: 1rem;
+}

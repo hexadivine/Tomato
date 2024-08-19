@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import { useCart } from "../../contexts/Cart/CartContext";
 import PrimaryBtn from "../PrimaryBtn/PrimaryBtn";
 import "./CartTotal.css";
@@ -24,7 +25,7 @@ function CartTotal() {
                     </tr>
                 </tbody>
             </table>
-            <PrimaryBtn message="Proceed to Checkout" className="checkout-btn" />
+            <PrimaryBtn message={<Link to="/order" > Proceed to Checkout </Link>} className="checkout-btn" />
         </div>
     );
 }

@@ -1,0 +1,14 @@
+.order-page {
+    display: flex;
+    margin-top: 10rem;
+    justify-content: space-evenly;
+    /* gap: 20rem; */
+}
+
+@media (max-width: 1000px) {
+    .order-page {
+        flex-direction: column;
+        gap: 10rem;
+        align-items: center;
+    }
+}
