@@ -1,5 +1,5 @@
 .admin-sidebar {
-    height: 100vh;
+    height: calc(100vh - 9.9rem);
     border-right: 1px solid gray;
 }
 

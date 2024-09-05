@@ -1,0 +1,36 @@
+.admin-form {
+    margin-left: 10rem;
+    margin-top: 5rem;
+}
+
+.admin-form-item {
+    margin-bottom: 2rem;
+}
+.admin-form-item p {
+    margin-bottom: 1rem;
+    color: gray;
+}
+
+.admin-form-upload label {
+    cursor: pointer;
+}
+
+.admin-form-item input,.admin-form-item textarea, .admin-form-item select {
+    border: 1px solid gray;
+    background-color: white;
+    padding: 1rem;
+    width: 100%;
+}
+
+.admin-form-items {
+    display: flex;
+    gap: 3rem;
+    /* align-items: center; */
+}
+
+.admin-form-add-btn input {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 4rem;
+    width: initial;
+}
