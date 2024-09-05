@@ -2,7 +2,6 @@ import "./Add.css";
 import { assets } from "./../../assets/assets.js";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function Add() {
     const URL = "http://localhost:9999/api/food/add";

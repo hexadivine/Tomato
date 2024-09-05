@@ -35,6 +35,7 @@ export const listFood = async (req, res) => {
 export const removeFood = async (req, res) => {
     try {
         const foodId = req.body.id;
+        console.log(foodId);
         const removedFood = await Food.findByIdAndDelete(foodId);
         fs.unlink(`uploads/${removedFood.image}`, () => {});
         res.send({ success: true, message: removedFood });

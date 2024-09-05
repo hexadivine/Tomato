@@ -1,0 +1,46 @@
+.food-list {
+    margin: 10rem auto;
+    /* border: 1px solid gray; */
+}
+
+.food-list-heading, .food-list-data {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+    padding: 1.2rem 1.5rem;
+    align-items: center;
+    gap: 10rem;
+    border: 1px solid black;
+
+}
+
+.no-foods {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid black;
+    border-top: none;
+    /* background: #000; */
+}
+
+.food-list-heading {
+background-color: #dedede49;
+}
+
+.food-list-data {
+border-top: none;
+
+}
+
+.food-list-data p:last-child {
+    cursor: pointer;
+}
+
+.food-list img {
+    width: 5rem;
+}
+
+.food-list tr {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+}

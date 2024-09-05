@@ -1,52 +1,68 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import "./List.css";
+import { toast, ToastContainer } from "react-toastify";
 
-function Remove() {
+function List() {
     const BACKEND_URL = "http://localhost:9999";
-    const MAIN_URL = "/api/food/list";
+    const LIST_FOOD_ENDPOINT = "/api/food/list";
+    const REMOVE_FOOD_ENDPOINT = "/api/food/remove";
 
     const [foods, setFoods] = useState([]);
 
-    useEffect(() => {
-        const fetchFood = async () => {
-            const response = await fetch(BACKEND_URL + MAIN_URL);
-            if (response.ok) {
-                const resData = await response.json();
-                console.log(resData);
-                setFoods(resData.data);
-            }
-        };
+    const fetchFood = async () => {
+        const response = await fetch(BACKEND_URL + LIST_FOOD_ENDPOINT);
+        if (response.ok) {
+            const resData = await response.json();
+            console.log(resData);
+            setFoods(resData.data);
+        }
+    };
 
+    useEffect(() => {
         fetchFood();
     }, []);
 
+    const removeFood = async (id) => {
+        await fetch(BACKEND_URL + REMOVE_FOOD_ENDPOINT, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ id }), // Sending ID in the request body
+        });
+        fetchFood();
+        toast.success("Food removed successfully");
+
+        await fe;
+    };
+
     return (
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Name</th>
-                        <th>Category</th>
-                        <th>Price</th>
-                        <th>Remove</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {foods.map((food, key) => (
-                        <tr key={key}>
-                            {console.log(`${BACKEND_URL}/images/${food.image}`)}
-                            <td>
-                                <img src={`${BACKEND_URL}/images/${food.image}`} alt="" />
-                            </td>
-                            <td>{food.name}</td>
-                            <td>{food.category}</td>
-                            <td>{food.price}</td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+        <>
+            <ToastContainer />
+            <div className="food-list">
+                <div className="food-list-heading">
+                    <b>Image</b>
+                    <b>Name</b>
+                    <b>Category</b>
+                    <b>Price</b>
+                    <b>Remove</b>
+                </div>
+                {foods.length === 0 ? (
+                    <p className="no-foods">Add foods from the left side "Add" page</p>
+                ) : (
+                    foods.map((food, key) => (
+                        <div key={key} className="food-list-data">
+                            <img src={`${BACKEND_URL}/images/${food.image}`} alt="" />
+                            <p>{food.name}</p>
+                            <p>{food.category}</p>
+                            <p>{food.price}</p>
+                            <p onClick={() => removeFood(food._id)}>x</p>
+                        </div>
+                    ))
+                )}
+            </div>
+        </>
     );
 }
 
-export default Remove;
+export default List;
