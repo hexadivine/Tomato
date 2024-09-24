@@ -4,6 +4,7 @@ import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
 import Footer from "./components/Footer/Footer";
 import Order from "./pages/Order/Order";
+import "./App.css";
 
 function App() {
     return (

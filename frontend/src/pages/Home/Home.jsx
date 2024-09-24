@@ -12,7 +12,7 @@ function Home() {
     console.log(cart);
 
     return (
-        <div>
+        <>
             <Banner />
             <ExploreMenu />
             <hr />
@@ -21,14 +21,12 @@ function Home() {
                 {Object.keys(cart).length === 0 ? (
                     ""
                 ) : (
-                    <PrimaryBtn
-                        message={<Link to="/cart"> Go to cart </Link>}
-                    />
+                    <PrimaryBtn message={<Link to="/cart"> Go to cart </Link>} />
                 )}
             </div>
 
             <AppPromotion />
-        </div>
+        </>
     );
 }
 

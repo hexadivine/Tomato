@@ -6,7 +6,6 @@ import { useCart } from "../../contexts/Cart/CartContext";
 function MenuCard() {
     const { cart, addToCart, removeFromCart } = useCart();
     const { activeCategory } = useCategory();
-    // console.log("total price = ", getTotal());
 
     return food_list.map((food, index) =>
         activeCategory === food.category || activeCategory === "all" ? (
