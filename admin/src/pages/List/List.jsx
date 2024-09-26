@@ -32,8 +32,6 @@ function List() {
         });
         fetchFood();
         toast.success("Food removed successfully");
-
-        await fe;
     };
 
     return (

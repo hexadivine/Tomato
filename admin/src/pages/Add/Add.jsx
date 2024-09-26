@@ -54,6 +54,13 @@ function Add() {
             if (!responseData.success) return toast.error(responseData.message);
 
             toast.success("Product added successfully");
+            setImage(false);
+            setData({
+                name: "",
+                description: "",
+                category: "Salad",
+                price: "",
+            });
         } catch (error) {
             toast.error(error.message);
         }
@@ -112,7 +119,7 @@ function Add() {
                             onChange={(e) => handleInputChange(e)}
                         >
                             <option value="Salad">Salad</option>
-                            <option value="adc">abc</option>
+                            <option value="Rolls">Rolls</option>
                             <option value="PqR">PqR</option>
                         </select>
                     </div>

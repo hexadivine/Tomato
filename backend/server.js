@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import foodRouter from "./routes/food.js";
+import userRouter from "./routes/users.js";
 
 // initialisation
 dotenv.config();
@@ -13,7 +14,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/images", express.static("uploads"));
+
 app.use("/api/food", foodRouter);
+app.use("/api/users", userRouter);
 
 // run
 mongoose.connect(process.env.MONGODB_URL).then(() => {
