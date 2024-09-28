@@ -1,13 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+import dotenv from "dotenv/config";
 import cors from "cors";
 
 import foodRouter from "./routes/food.js";
 import userRouter from "./routes/users.js";
 
 // initialisation
-// dotenv.config();
 const app = express();
 
 // middleware
