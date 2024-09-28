@@ -24,9 +24,9 @@ app.get("/", (req, res) => {
 // run
 mongoose.connect(process.env.MONGODB_URL).then(() => {
     console.log("connected");
-    // app.listen(process.env.PORT || 9999, () => {
-    //     console.log("Server is up and running");
-    // });
+    app.listen(process.env.PORT || 9999, () => {
+        console.log("Server is up and running");
+    });
 });
 
 export default app;
