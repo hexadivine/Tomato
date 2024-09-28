@@ -50,6 +50,44 @@ nav {
     background-color: #ff634749;
 }
 
+.profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile-more {
+    display: none;
+    position: absolute;
+    right: -1px;
+    margin-top: -2px;
+    z-index: 1;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid tomato;
+    /* outline: 2px solid white; */
+}
+
+.profile-more:hover {
+    display: block;
+}
+
+.profile-img:hover + .profile-more {
+display: block;
+}
+
+.profile-more li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 3rem;
+    /* border: 1px solid tomato; */
+}
+
+.profile-more li:hover {
+    color: tomato;
+}
+
 @media (max-width: 1080px) {
 
     .nav-center {
