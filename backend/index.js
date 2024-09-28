@@ -22,13 +22,15 @@ app.get("/", (req, res) => {
     res.send({ success: true, msg: "Server is up and running" });
 });
 
-app.listen(process.env.PORT || 9999, () => {
-    console.log("Server is up and running");
+// app.listen(process.env.PORT || 9999, () => {
+//     console.log("Server is up and running");
+// });
+
+// run
+mongoose.connect(process.env.MONGODB_URL).then(() => {
+    app.listen(process.env.PORT || 9999, () => {
+        console.log("Server is up and running");
+    });
 });
 
-// // run
-// mongoose.connect(process.env.MONGODB_URL).then(() => {
-//     app.listen(process.env.PORT || 9999, () => {
-//         console.log("Server is up and running");
-//     });
-// });
+export default app;
