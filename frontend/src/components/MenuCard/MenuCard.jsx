@@ -1,17 +1,20 @@
 import "./MenuCard.css";
-import { assets, food_list } from "../../assets/assets";
+import { assets } from "../../assets/assets";
 import { useCategory } from "../../contexts/Category/CategoryContext";
 import { useCart } from "../../contexts/Cart/CartContext";
+import { useFoodList } from "../../contexts/FoodList/FoodList";
 
 function MenuCard() {
     const { cart, addToCart, removeFromCart } = useCart();
     const { activeCategory } = useCategory();
+    const BACKEND_ENDPOINT = import.meta.env.VITE_BACKEND_ENDPOINT;
+    const { foodList } = useFoodList();
 
-    return food_list.map((food, index) =>
+    return foodList.map((food, index) =>
         activeCategory === food.category || activeCategory === "all" ? (
             <div key={index} className="menu-card">
                 <div className="menu-img">
-                    <img src={food.image} alt="" />
+                    <img src={BACKEND_ENDPOINT + "/images/" + food.image} alt="" />
                     {!cart[food._id] ? (
                         <img
                             className="add-to-cart"

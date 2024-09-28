@@ -4,8 +4,8 @@ import { useCart } from "./../../contexts/Cart/CartContext";
 function CartOrders() {
     const { getCartInfo, setCart, getTotal } = useCart();
     const cartInfo = getCartInfo();
-    console.log(cartInfo);
-    console.log(getTotal());
+    const BACKEND_ENDPOINT = import.meta.env.VITE_BACKEND_ENDPOINT;
+
     return (
         <div>
             <table className="cart-table">
@@ -13,7 +13,7 @@ function CartOrders() {
                     <th>Items</th>
                     <th>Title</th>
                     <th>Price</th>
-                    <th>Quntity</th>
+                    <th>Quantity</th>
                     <th>Total</th>
                     <th>Remove</th>
                 </thead>
@@ -21,7 +21,7 @@ function CartOrders() {
                     {cartInfo.map((cartItem, index) => (
                         <tr key={index}>
                             <td>
-                                <img src={cartItem.img} alt="" />
+                                <img src={BACKEND_ENDPOINT + "/images/" + cartItem.img} alt="" />
                             </td>
                             <td>{cartItem.title}</td>
                             <td>${cartItem.price}</td>
@@ -41,10 +41,12 @@ function CartOrders() {
                             <td>{cartItem.total}</td>
                             <td>
                                 <button
-                                    onClick={() => setCart((prev) => {
-                                        delete prev[cartItem.id];
-                                        return { ...prev };
-                                    })}
+                                    onClick={() =>
+                                        setCart((prev) => {
+                                            delete prev[cartItem.id];
+                                            return { ...prev };
+                                        })
+                                    }
                                 >
                                     x
                                 </button>
