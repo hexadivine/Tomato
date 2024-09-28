@@ -1,30 +1,34 @@
 import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import cors from "cors";
+// import mongoose from "mongoose";
+// import dotenv from "dotenv";
+// import cors from "cors";
 
-import foodRouter from "./routes/food.js";
-import userRouter from "./routes/users.js";
+// import foodRouter from "./routes/food.js";
+// import userRouter from "./routes/users.js";
 
 // initialisation
-dotenv.config();
+// dotenv.config();
 const app = express();
 
-// middleware
-app.use(cors());
-app.use(express.json());
-app.use("/images", express.static("uploads"));
+// // middleware
+// app.use(cors());
+// app.use(express.json());
+// app.use("/images", express.static("uploads"));
 
-app.use("/api/food", foodRouter);
-app.use("/api/users", userRouter);
+// app.use("/api/food", foodRouter);
+// app.use("/api/users", userRouter);
 
 app.get("/", (req, res) => {
     res.send({ success: true, msg: "Server is up and running" });
 });
 
-// run
-mongoose.connect(process.env.MONGODB_URL).then(() => {
-    app.listen(process.env.PORT || 9999, () => {
-        console.log("Server is up and running");
-    });
+app.listen(process.env.PORT || 9999, () => {
+    console.log("Server is up and running");
 });
+
+// // run
+// mongoose.connect(process.env.MONGODB_URL).then(() => {
+//     app.listen(process.env.PORT || 9999, () => {
+//         console.log("Server is up and running");
+//     });
+// });
