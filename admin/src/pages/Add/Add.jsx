@@ -120,7 +120,7 @@ function Add() {
                         >
                             <option value="Salad">Salad</option>
                             <option value="Rolls">Rolls</option>
-                            <option value="PqR">PqR</option>
+                            <option value="Deserts">Deserts</option>
                         </select>
                     </div>
                     <div className="admin-form-product-price admin-form-item">
