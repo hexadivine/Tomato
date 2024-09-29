@@ -4,14 +4,14 @@ const express = require("express");
 const mongoose = require("mongoose");
 // import cors from "cors";
 const cors = require("cors");
-// import dotenv from "dotenv/config";
-require("dotenv/config");
-
 // import foodRouter from "./routes/food.js";
 const foodRouter = require("./routes/food.js");
 // import userRouter from "./routes/users.js";
 const userRouter = require("./routes/users.js");
-// initialisation
+// import dotenv from "dotenv/config";
+require("dotenv/config");
+
+// initialization
 const app = express();
 
 // middleware
