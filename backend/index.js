@@ -14,8 +14,10 @@ require("dotenv/config");
 // initialization
 const app = express();
 
+const corsConfig = { origin: "*", credential: true, methods: ["GET", "POST", "PUT", "DELETE"] };
 // middleware
-app.use(cors());
+app.options("", cors(corsConfig));
+app.use(cors(corsConfig));
 app.use(express.json());
 app.use("/images", express.static("uploads"));
 
