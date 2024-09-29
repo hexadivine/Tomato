@@ -1,8 +1,13 @@
-import { userModel } from "../models/users.js";
-import bcrypt from "bcrypt";
-import validator from "validator";
-import jwt from "jsonwebtoken";
-import "dotenv/config";
+// import { userModel } from "../models/users.js";
+// import bcrypt from "bcrypt";
+// import validator from "validator";
+// import jwt from "jsonwebtoken";
+// import "dotenv/config";
+const userModel = require("../models/users.js");
+const bcrypt = require("bcrypt");
+const validator = require("validator");
+const jwt = require("jsonwebtoken");
+require("dotenv/config");
 
 const createToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_TOKEN);
@@ -61,4 +66,5 @@ const userLogin = async (req, res) => {
     return res.json({ success: true, token });
 };
 
-export { userSignup, userLogin };
+// export { userSignup, userLogin };
+module.exports = { userSignup, userLogin };

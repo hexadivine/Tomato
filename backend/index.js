@@ -1,11 +1,16 @@
-import express from "express";
-import mongoose from "mongoose";
-import dotenv from "dotenv/config";
-import cors from "cors";
+// import express from "express";
+const express = require("express");
+// import mongoose from "mongoose"
+const mongoose = require("mongoose");
+// import cors from "cors";
+const cors = require("cors");
+// import dotenv from "dotenv/config";
+require("dotenv/config");
 
-import foodRouter from "./routes/food.js";
-import userRouter from "./routes/users.js";
-
+// import foodRouter from "./routes/food.js";
+const foodRouter = require("./routes/food.js");
+// import userRouter from "./routes/users.js";
+const userRouter = require("./routes/users.js");
 // initialisation
 const app = express();
 
@@ -33,4 +38,5 @@ app.listen(process.env.PORT || 9999, () => {
     console.log("Server is up and running");
 });
 
-export default app;
+// export default app;
+module.exports = app;

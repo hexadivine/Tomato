@@ -1,7 +1,9 @@
-import { Food } from "../models/food.js";
-import fs from "fs";
+// import { Food } from "../models/food.js";
+const Food = require("../models/food");
+// import fs from "fs";
+const fs = require("fs");
 
-export const addFood = async (req, res) => {
+const addFood = async (req, res) => {
     try {
         console.log(req.file.filename);
         const food = await Food.create({
@@ -23,7 +25,7 @@ export const addFood = async (req, res) => {
     }
 };
 
-export const listFood = async (req, res) => {
+const listFood = async (req, res) => {
     try {
         const food = await Food.find({});
         res.send({ success: true, data: food });
@@ -32,7 +34,7 @@ export const listFood = async (req, res) => {
     }
 };
 
-export const removeFood = async (req, res) => {
+const removeFood = async (req, res) => {
     try {
         const foodId = req.body.id;
         console.log(foodId);
@@ -43,3 +45,5 @@ export const removeFood = async (req, res) => {
         res.send({ success: false, message: error.message });
     }
 };
+
+module.exports = { addFood, listFood, removeFood };

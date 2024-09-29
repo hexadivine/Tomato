@@ -1,7 +1,10 @@
-import express from "express";
-import multer from "multer";
+// import express from "express";
+const express = require("express");
+// import multer from "multer";
+const multer = require("multer");
 
-import { addFood, listFood, removeFood } from "../controllers/food.js";
+// import { addFood, listFood, removeFood } from "../controllers/food.js";
+const { addFood, listFood, removeFood } = require("../controllers/food.js");
 
 const foodRouter = express.Router();
 
@@ -19,4 +22,4 @@ foodRouter.post("/add", upload.single("image"), addFood);
 foodRouter.get("/list", listFood);
 foodRouter.delete("/remove", removeFood);
 
-export default foodRouter;
+module.exports = foodRouter;
