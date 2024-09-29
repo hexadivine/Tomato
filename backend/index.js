@@ -14,7 +14,11 @@ require("dotenv/config");
 // initialization
 const app = express();
 
-const corsConfig = { origin: "*", credential: true, methods: ["GET", "POST", "PUT", "DELETE"] };
+const corsConfig = {
+    origin: "https://tomato-byhd.vercel.app",
+    credential: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+};
 // middleware
 app.options("", cors(corsConfig));
 app.use(cors(corsConfig));
