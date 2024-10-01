@@ -9,7 +9,7 @@ const { addFood, listFood, removeFood } = require("../controllers/food.js");
 const foodRouter = express.Router();
 
 const storage = multer.diskStorage({
-    destination: "uploads",
+    destination: "/tmp",
     filename: (req, file, cb) => {
         const uniqueFilename = `${Date.now()}-${file.originalname}`;
         cb(null, uniqueFilename);

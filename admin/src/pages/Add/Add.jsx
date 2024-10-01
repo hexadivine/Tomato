@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 function Add() {
-    const URL = "http://localhost:9999/api/food/add";
+    const URL = "http://localhost:9991/api/food/add";
     const [image, setImage] = useState(false);
     const [data, setData] = useState({
         name: "",

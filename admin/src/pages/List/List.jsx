@@ -3,7 +3,7 @@ import "./List.css";
 import { toast, ToastContainer } from "react-toastify";
 
 function List() {
-    const BACKEND_URL = "http://localhost:9999";
+    const BACKEND_URL = "http://localhost:9991";
     const LIST_FOOD_ENDPOINT = "/api/food/list";
     const REMOVE_FOOD_ENDPOINT = "/api/food/remove";
 
