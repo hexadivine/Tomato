@@ -1,7 +1,7 @@
 // import express from "express";
 const express = require("express");
 // import mongoose from "mongoose"
-const mongoose = require("mongoose");
+const connectDB = require("./connect.mongodb.js");
 // import cors from "cors";
 const cors = require("cors");
 // import foodRouter from "./routes/food.js";
@@ -12,25 +12,24 @@ const userRouter = require("./routes/users.js");
 require("dotenv/config");
 
 // initialization
+connectDB();
 const app = express();
 
+// middleware
 app.use(cors());
 app.use(express.json());
 app.use("/images", express.static("uploads"));
-
+// middleware - routes
 app.use("/api/food", foodRouter);
 app.use("/api/users", userRouter);
-
+// boot msg
 app.get("/", (req, res) => {
     res.send({ success: true, msg: "Server is up and running" });
 });
-
 // run
-mongoose.connect(process.env.MONGODB_URI).then(() => {
-    app.listen(process.env.PORT || 9999, () => {
-        console.log("Server is up and running");
-    });
+const PORT = process.env.PORT || 9999;
+app.listen(PORT, () => {
+    console.log("Server is running on port " + PORT);
 });
-
 // export default app;
 module.exports = app;
